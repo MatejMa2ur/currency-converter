@@ -7,10 +7,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["CurrencyConverter.Web/CurrencyConverter.Web.csproj", "CurrencyConverter.Web/"]
-RUN dotnet restore "CurrencyConverter.Web/CurrencyConverter.Web.csproj"
+COPY ["CurrencyConverter.Web.csproj", "./"]
+RUN dotnet restore "CurrencyConverter.Web.csproj"
 COPY . .
-WORKDIR "/src/CurrencyConverter.Web"
+WORKDIR "/src"
 RUN dotnet build "CurrencyConverter.Web.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
