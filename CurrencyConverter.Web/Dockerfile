@@ -8,11 +8,7 @@ WORKDIR "/src"
 RUN dotnet build "CurrencyConverter.Web.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "CurrencyConverter.Web.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
-
-FROM build AS publish
-RUN dotnet publish BlazorWasmWithDocker.csproj -c Release -o /app/publish
+RUN dotnet publish BlazorWasmWithDocker.csproj -c $BUILD_CONFIGURATION -o /app/publish
 
 FROM nginx:alpine AS final
 WORKDIR /usr/share/nginx/html
