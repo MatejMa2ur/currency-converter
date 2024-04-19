@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../1stSemester/MyTunes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../1stSemester/SCO/CSe22B-Examples-From-Class" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../3rdSemester/BoxFactory" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../3rdSemester/NewsAPI_3rd_Semester_With_Tests" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../3rdSemester/Vital" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../3rdSemester/aspnet_security" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../4thSemester/DevOps/eShop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../CDWeatherExample" vcs="Git" />
+  </component>
+</project>

@@ -1,0 +1,6 @@
+﻿services:
+  currencyconverter:
+    image: currencyconverter
+    build:
+      context: .
+      dockerfile: CurrencyConverter/Dockerfile
