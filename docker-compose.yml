@@ -1,21 +1,19 @@
 ﻿services:
   currency-frontend:
     image: ghcr.io/matejma2ur/currency-converter-web:latest
+    container_name: currency-fe
     ports:
       - "5001:8080"
     depends_on:
       - currency-api
-    labels:
-      - "com.centurylinklabs.watchtower.enable=true"
   
   currency-api:
     image: ghcr.io/matejma2ur/currency-converter-api:latest
+    container_name: currency-be
     ports:
       - "5002:8080"
     depends_on:
       - db
-    labels:
-      - "com.centurylinklabs.watchtower.enable=true"
 
   db:
     image: postgres
@@ -31,12 +29,9 @@
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    command: --debug --http-api-update
+    command: --debug --http-api-update --interval 30 currency-fe currency-be
     environment:
       - WATCHTOWER_HTTP_API_TOKEN=extremlysecuretoken
-      - WATCHTOWER_LABEL_ENABLE=true
-    labels:
-      - "com.centurylinklabs.watchtower.enable=false"
     ports:
       - 8080:8080
 
