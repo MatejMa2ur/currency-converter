@@ -29,11 +29,8 @@
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    command: --debug --http-api-update --interval 30 currency-fe currency-be
+    command: --debug --http-api-update currency-fe currency-be
     environment:
       - WATCHTOWER_HTTP_API_TOKEN=extremlysecuretoken
     ports:
       - 8080:8080
-
-volumes:
-  mariadb:
