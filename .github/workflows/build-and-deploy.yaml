@@ -30,6 +30,14 @@ jobs:
       - name: Test
         run: dotnet test
 
+      - name: Run .NET Code Analysis
+        uses: dotnet/code-analysis@v1
+        id: code-analysis
+        with:
+          solution: MySolution.sln
+          build-breaking: true
+          all-categories: all
+
   Deploy:
     needs: build
     if: github.ref == 'refs/heads/main'
